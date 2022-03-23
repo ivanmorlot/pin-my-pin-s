@@ -1,6 +1,7 @@
 const express = require("express");
 const helmet = require("helmet");
 const { config } = require("dotenv")
+const cors = require("cors");
 
 const Database = require("./db/database");
 const { registerSchemas } = require("./middleware")
@@ -11,9 +12,13 @@ const productRouter = require("./router/product");
 config()
 
 const app = express();
+app.disable('x-powered-by')
+
+app.use(cors({ origin: "*" }));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 
 app.use(helmet());
 
@@ -29,11 +34,10 @@ app.use((req, res, next) => {
      })
 });
 
-// app.use(registerSchemas);
+app.use(registerSchemas);
 
 app.use("/v1/api/market", userRouter)
 app.use("/v1/api/market", productRouter)
-
 
 app.use((error, req, res, next) => {
     const code = error.code || 500;

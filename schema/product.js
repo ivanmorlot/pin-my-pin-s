@@ -1,15 +1,14 @@
 class ProductSchema {
     constructor(name, image, price, description){
         this.name = name;
-        this.name = image;
+        this.image = image;
         this.price = price;
         this.description = description;
     }
 
     static async createSchema(database){
-        if(this.database) return
         const productsSchema = new ProductSchema();
-        const createdProductSchema = database.createSchema("users",{
+        const createdProductSchema = database.createSchema("products",{
             validator: {
                 $jsonSchema: {
                     bsonType: "object",
@@ -17,7 +16,6 @@ class ProductSchema {
                 }
             }
         })
-        this.database = database;
         return createdProductSchema;
     }
 }

@@ -8,18 +8,15 @@ class UserSchema {
     }
 
     static async createSchema(database){
-        if(this.database) return
         const usersSchema = new UserSchema();
-        const createdUsersSchema = database.createSchema("users",{
-            validator: {
-                $jsonSchema: {
-                    bsonType: "object",
-                    required: Object.keys(usersSchema)
+        return database.createSchema("users", {
+                validator: {
+                    $jsonSchema: {
+                        bsonType: "object",
+                        required: Object.keys(usersSchema)
+                    }
                 }
-            }
-        })
-        this.database = database;
-        return createdUsersSchema
+            })
     }
 }
 
