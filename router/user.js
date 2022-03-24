@@ -2,7 +2,7 @@ const { Router } = require("express");
 
 const userRouter = Router();
 
-userRouter.get("/user", (request, response) => {
+userRouter.get("/users", (request, response) => {
     response
         .status(200)
         .end(JSON.stringify({

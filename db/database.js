@@ -38,16 +38,23 @@ class Database {
       return true;
     }
 
-    async getCollection(name) {
+    async getAll(collectionName) {
       return this.db
-        .collection(name)
+        .collection(collectionName)
         .find({})
         .toArray();
     }
 
-    async insertMany(nameCollection, datas = []) {
+    async get(collectionName, id) {
       return this.db
-        .collection(nameCollection)
+        .collection(collectionName)
+        .find({ _id: new ObjectId(id) })
+        .toArray();
+    }
+
+    async insertMany(collectionName, datas = []) {
+      return this.db
+        .collection(collectionName)
         .insertMany(datas)
         .catch(e => {
           throw e;

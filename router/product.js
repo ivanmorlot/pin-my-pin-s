@@ -3,10 +3,24 @@ const { Router } = require("express");
 const productRouter = Router();
 
 productRouter.get("/products", async (request, response) => {
-    const products = await request.database.getCollection("products");
+    const products = await request.database.getAll("products");
     response
         .status(200)
         .json(products);
+});
+
+productRouter.get("/product/:id", (request, response, next) => {
+    const { id } = request.params;
+
+    request.database
+        .get("products", id)
+        .then((result) => {
+            console.log(result);
+            response
+                .status(200)
+                .json(result);
+        })
+        .catch(e => next(e));
 });
 
 productRouter.post("/products", (request, response, next) => {
