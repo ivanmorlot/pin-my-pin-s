@@ -1,5 +1,5 @@
 class UserSchema {
-    constructor(name, role, email, mdp, address){
+    constructor(name, role, email, mdp, address) {
         this.name = name;
         this.email = email;
         this.mdp = mdp;
@@ -7,7 +7,7 @@ class UserSchema {
         this.role = role;
     }
 
-    static async createSchema(database){
+    static async createSchema(database) {
         const usersSchema = new UserSchema();
         return database.createSchema(
             "users",
@@ -18,7 +18,8 @@ class UserSchema {
                         required: Object.keys(usersSchema),
                     }
                 }
-            })
+            }
+        );
     }
 }
 

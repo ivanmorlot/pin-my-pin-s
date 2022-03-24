@@ -1,4 +1,5 @@
 const registerSchemas = require("./registerSchema");
-const insertFixtures = require("./insertFixtures");
+const insertProductFixtures = require("./insertProductFixtures");
+const insertUserFixtures = require("./insertUserFixtures");
 
-module.exports = { registerSchemas, insertFixtures };
+module.exports = { registerSchemas, insertProductFixtures, insertUserFixtures };

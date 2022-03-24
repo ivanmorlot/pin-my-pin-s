@@ -7,10 +7,10 @@ const server = createServer(app);
 socketServer.attach(server);
 
 const listen = server.listen(() => {
-    console.log("Server started !");
-
     const address = listen.address().address;
     const port = listen.address().port;
-    
-    console.log(`${address}:${port}`);
+    console.log('----------------------------------------------------------')
+    console.log("Server started at route:");
+    console.log(`http://${address === '::' ? 'localhost' : address}:${port}`);
+    console.log('----------------------------------------------------------')
 });
