@@ -45,7 +45,7 @@ class Database {
         .toArray();
     }
 
-    async insertMany(nameCollection,datas = []) {
+    async insertMany(nameCollection, datas = []) {
       return this.db
         .collection(nameCollection)
         .insertMany(datas)

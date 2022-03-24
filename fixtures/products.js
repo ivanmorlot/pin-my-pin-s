@@ -1,16 +1,14 @@
-module.exports = {
-  products: [
-    {
-      id: 1, title: 'Lorem1', description: 'lorem ipsum dolor sit amet', attributes: ['red', 'large', 'satin'],
-    },
-    {
-      id: 2, title: 'Lorem2', description: 'lorem ipsum dolor sit amet', attributes: ['red', 'large', 'satin'],
-    },
-    {
-      id: 3, title: 'Lorem3', description: 'lorem ipsum dolor sit amet', attributes: ['red', 'large', 'satin'],
-    },
-    {
-      id: 4, title: 'Lorem4', description: 'lorem ipsum dolor sit amet', attributes: ['red', 'large', 'satin'],
-    },
-  ]
-}
+module.exports = [
+  {
+    name: 'Lorem1', description: 'lorem ipsum dolor sit amet', price: '4.00 €', image: 'image1',
+  },
+  {
+    name: 'Lorem2', description: 'lorem ipsum dolor sit amet', price: '2.70 €', image: 'image2',
+  },
+  {
+    name: 'Lorem3', description: 'lorem ipsum dolor sit amet', price: '5.00 €', image: 'image3',
+  },
+  {
+    name: 'Lorem4', description: 'lorem ipsum dolor sit amet', price: '3.50 €', image: 'image4',
+  },
+];

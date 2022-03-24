@@ -3,7 +3,7 @@ const Database = require("./db/database");
 const cors = require("cors");
 const express = require("express");
 const { config } = require("dotenv");
-const { registerSchemas } = require("./middleware");
+const { registerSchemas, insertFixtures } = require("./middleware");
 
 const helmet = require("helmet");
 const userRouter = require("./router/user");
@@ -35,6 +35,7 @@ app.use((req, res, next) => {
 });
 
 app.use(registerSchemas);
+app.use(insertFixtures);
 
 app.use("/v1/api/market", userRouter);
 app.use("/v1/api/market", productRouter);
