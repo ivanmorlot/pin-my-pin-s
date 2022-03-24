@@ -8,14 +8,18 @@ class ProductSchema {
 
     static async createSchema(database){
         const productsSchema = new ProductSchema();
-        const createdProductSchema = database.createSchema("products",{
-            validator: {
-                $jsonSchema: {
-                    bsonType: "object",
-                    required: Object.keys(productsSchema)
+        const createdProductSchema = database.createSchema(
+            "products",
+            {
+                validator: {
+                    $jsonSchema: {
+                        bsonType: "object",
+                        required: Object.keys(productsSchema),
+                    }
                 }
             }
-        })
+        );
+
         return createdProductSchema;
     }
 }

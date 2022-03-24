@@ -9,11 +9,13 @@ class UserSchema {
 
     static async createSchema(database){
         const usersSchema = new UserSchema();
-        return database.createSchema("users", {
+        return database.createSchema(
+            "users",
+            {
                 validator: {
                     $jsonSchema: {
                         bsonType: "object",
-                        required: Object.keys(usersSchema)
+                        required: Object.keys(usersSchema),
                     }
                 }
             })
