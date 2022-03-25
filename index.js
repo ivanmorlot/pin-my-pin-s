@@ -1,6 +1,6 @@
 const { createServer } = require("http");
 const app = require("./app");
-const socketServer = require("./socket");
+const { socketServer } = require("./websockets");
 
 const server = createServer(app);
 
