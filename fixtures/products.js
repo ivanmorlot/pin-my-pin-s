@@ -2,7 +2,7 @@ module.exports = [
   {
     name: 'Lorem1',
     description: 'lorem ipsum dolor sit amet',
-    price: '4.00 €',
+    price: 4,
     image: 'image1',
     color: "red",
     license: "Marvel",
@@ -11,7 +11,7 @@ module.exports = [
   {
     name: 'Lorem2',
     description: 'lorem ipsum dolor sit amet',
-    price: '2.70 €',
+    price: 2.7,
     image: 'image2',
     color: "blue",
     license: "Disney",
@@ -20,7 +20,7 @@ module.exports = [
   {
     name: 'Lorem3',
     description: 'lorem ipsum dolor sit amet',
-    price: '5.00 €',
+    price: 5,
     image: 'image3',
     color: "pink",
     license: "Pixar",
@@ -29,7 +29,7 @@ module.exports = [
   {
     name: 'Lorem4',
     description: 'lorem ipsum dolor sit amet',
-    price: '3.50 €',
+    price: 3.5,
     image: 'image4',
     color: "green",
     license: "Disney",
